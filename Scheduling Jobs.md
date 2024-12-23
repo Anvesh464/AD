@@ -29,6 +29,8 @@ Explanation of parameters:
 - `/TN "STCheck"`: Names the task "STCheck".
 - `/TR`: Specifies the task action (in this case, executing PowerShell to download and run the script).
 
+![image](https://github.com/user-attachments/assets/6c9e8fa3-2958-4482-8ee1-064ae52bff20)
+
 The output should be:
 
 ```
@@ -48,6 +50,7 @@ The output should confirm that the task has been attempted:
 ```
 SUCCESS: Attempted to run the scheduled task "STCheck".
 ```
+![image](https://github.com/user-attachments/assets/6cd37c97-2719-43d6-8c89-073245f2f8f6)
 
 ### 4. **Listening for Incoming Connections**
 
