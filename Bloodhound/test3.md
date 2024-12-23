@@ -2461,7 +2461,7 @@ individual permission or audits access. Who has permission and what can be done
 
 <p class=MsoNormal><b>DACL:</b> Defines the permission trustee a user or group
 have on an object and what <span class=GramE>kinds<span
-style='mso-spacerun:yes'>  </span>on</span> an object and what kinds of
+style='mso-spacerun:yes'>Â  </span>on</span> an object and what kinds of
 operations they can perform.<o:p></o:p></p>
 
 <p class=MsoNormal><b>SACL</b>: Logs success and failure audit messages when an
@@ -2510,7 +2510,7 @@ alt="A white text on a white background&#10;&#10;Description automatically gener
 v:shapes="Picture_x0020_22"><![endif]></span><o:p></o:p></p>
 
 <p class=MsoNormal><span style='mso-ansi-language:EN-IN'><span
-style='mso-spacerun:yes'> </span><span lang=EN-IN><o:p></o:p></span></span></p>
+style='mso-spacerun:yes'>Â </span><span lang=EN-IN><o:p></o:p></span></span></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
@@ -2551,7 +2551,7 @@ src="test3_files/image006.jpg"
 alt="User Forest &#10;Two Way Forest Trust &#10;With Domain Wide Authentication &#10;XO DOC Forest "
 v:shapes="Picture_x0020_20"><![endif]></span><o:p></o:p></p>
 
-<p class=MsoNormal><span style='mso-spacerun:yes'> </span><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-spacerun:yes'>Â </span><o:p></o:p></p>
 
 <p class=MsoNormal><b>Transitive trust: </b><o:p></o:p></p>
 
@@ -2617,11 +2617,11 @@ Trust&nbsp;can be one-way or two-way.<o:p></o:p></p>
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
 <p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
- id="Picture_x0020_18" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Active Directory Trusts – Ace Fekay"
+ id="Picture_x0020_18" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Active Directory Trusts Â– Ace Fekay"
  style='width:524.25pt;height:166.5pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="test3_files/image009.png" o:title="Active Directory Trusts – Ace Fekay"/>
+ <v:imagedata src="test3_files/image009.png" o:title="Active Directory Trusts Â– Ace Fekay"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=699 height=222
-src="test3_files/image010.png" alt="Active Directory Trusts – Ace Fekay"
+src="test3_files/image010.png" alt="Active Directory Trusts Â– Ace Fekay"
 v:shapes="Picture_x0020_18"><![endif]></span><o:p></o:p></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
@@ -2714,7 +2714,7 @@ src="test3_files/image015.png" alt=image v:shapes="Picture_x0020_15"><![endif]><
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
-<p class=MsoNormal><b>External trust:</b><span style='mso-spacerun:yes'> 
+<p class=MsoNormal><b>External trust:</b><span style='mso-spacerun:yes'>Â 
 </span><o:p></o:p></p>
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
