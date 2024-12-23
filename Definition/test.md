@@ -1,5 +1,6 @@
 
 <p class=MsoNormal><b>Get domain information</b><o:p></o:p></p>
+![image001](https://github.com/user-attachments/assets/7918c0b9-b9fb-4f7a-8684-0e60be03e66f)
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
