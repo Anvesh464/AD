@@ -1,24 +1,24 @@
-Active Directory: 
+**Active Directory:** 
 
-• Active directory is a centralized device which we used for managing the organization devices and it is centralized and secure management of an entire network.
-• It stores information about objects on the network and makes it easily available to users and admins
-• Directory service used to managed the windows network.
+• Active directory is a centralized device which we used for managing the organization devices and it is centralized and secure management of an entire network.<br>
+• It stores information about objects on the network and makes it easily available to users and admins<br>
+• Directory service used to managed the windows network.<br>
 
 Objective like 
 
-AD --> windows server --> Account information, privileges, profiles policy.
-Windows Servers --> management profiles, network information, printers, file shares policy.
-Network Devices: Configuration, quality of service policy, security policy.
+AD --> windows server --> Account information, privileges, profiles policy.<br>
+Windows Servers --> management profiles, network information, printers, file shares policy.<br>
+Network Devices: Configuration, quality of service policy, security policy.<br>
 
-Components: Active Directory (AD) is composed of several different components, each of which plays a specific role in the management and operation of the directory service. The main components of AD include:
+**Components:** Active Directory (AD) is composed of several different components, each of which plays a specific role in the management and operation of the directory service. The main components of AD include:
 	
-	l Domain: A domain is a logical group of objects, such as users, computers, and printers, that share a common directory database. A domain is identified by a unique name and is managed as a single entity with its own policies and security settings.
-	l Domain Controller: A domain controller is a server that manages user authentication and authorization, and stores information about objects in the domain. Each domain has at least one domain controller, which is responsible for managing and replicating directory information to other domain controllers in the same domain.
-	l Active Directory Schema: The AD schema defines the structure and attributes of objects in the directory. The schema is stored on each domain controller and is replicated to all other domain controllers in the domain.
-	l Forest: A forest is a collection of one or more domains that share a common schema and global Catalog. A forest is a security boundary and provides a mechanism for defining trust relationships between domains.
-	l Global Catalog: The global catalog is a distributed data store that contains a subset of directory information from all domains in the forest. It provides a mechanism for searching and locating objects across domains.
-	l Organizational Unit (OU): An organizational unit is a container object that can be used to group and organize other objects in the directory, such as users, computers, and groups. OUs provide a mechanism for delegating administrative control and applying policies to a specific subset of objects.
-	l Trusts: Trusts are used to define relationships between domains in the same forest or in different forests. Trusts provide a mechanism for sharing resources and enabling users in one domain to access resources in another domain.
+**Domain:** A domain is a logical group of objects, such as users, computers, and printers, that share a common directory database. A domain is identified by a unique name and is managed as a single entity with its own policies and security settings.
+Domain Controller: A domain controller is a server that manages user authentication and authorization, and stores information about objects in the domain. Each domain has at least one domain controller, which is responsible for managing and replicating directory information to other domain controllers in the same domain.
+Active Directory Schema: The AD schema defines the structure and attributes of objects in the directory. The schema is stored on each domain controller and is replicated to all other domain controllers in the domain.
+Forest: A forest is a collection of one or more domains that share a common schema and global Catalog. A forest is a security boundary and provides a mechanism for defining trust relationships between domains.
+Global Catalog: The global catalog is a distributed data store that contains a subset of directory information from all domains in the forest. It provides a mechanism for searching and locating objects across domains.
+Organizational Unit (OU): An organizational unit is a container object that can be used to group and organize other objects in the directory, such as users, computers, and groups. OUs provide a mechanism for delegating administrative control and applying policies to a specific subset of objects.
+Trusts: Trusts are used to define relationships between domains in the same forest or in different forests. Trusts provide a mechanism for sharing resources and enabling users in one domain to access resources in another domain.
 
 Each of these components plays an important role in the management and operation of Active Directory. By understanding these components, administrators can effectively manage and secure their directory services.
 
