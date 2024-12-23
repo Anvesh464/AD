@@ -4,6 +4,9 @@
 
 <p class=MsoNormal>&nbsp;<o:p></o:p></p>
 
+![image002](https://github.com/user-attachments/assets/2a063aa2-0ec2-4d92-bc80-28eb3e3358a1)
+
+
 <p class=MsoNormal>Ipconfig /all<o:p></o:p></p>
 
 <p class=MsoNormal>PS C:\Users\student157&gt; [<span class=SpellE>System.Net.Dns</span><span
