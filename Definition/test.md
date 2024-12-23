@@ -53,7 +53,7 @@ ACLs (Access Control Lists) are a list of access control entries (ACE), each ACE
 
 Trust is a relationship that is established between two domains or forests to enable users in one domain to access resources in the other domain. Trusts allow users to authenticate to a domain controller in one domain and then access resources in another domain without having to re-authenticate.<br>
 
-<img src="https://github.com/user-attachments/assets/e21eb86c-6321-4e1e-9b30-969e3f84b4fb" alt="Image 1" width="600"/>
+<img src="https://github.com/user-attachments/assets/e21eb86c-6321-4e1e-9b30-969e3f84b4fb" alt="Image 1" width="750"/>
 
 # Trust Direction
 
