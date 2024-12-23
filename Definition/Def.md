@@ -16,26 +16,17 @@ Active Directory (AD) is a **centralized device** used for managing the organiza
 
 Active Directory consists of several components, each serving a specific role:
 
-### 1. **Domain**
-A logical group of objects (e.g., users, computers, printers) sharing a common directory database.
+#### Components of Active Directory
 
-### 2. **Domain Controller**
-A server that manages user authentication, authorization, and stores domain object information.
-
-### 3. **Active Directory Schema**
-Defines the structure and attributes of directory objects. It's replicated across domain controllers.
-
-### 4. **Forest**
-A collection of one or more domains with a common schema, providing a security boundary and trust relationships between domains.
-
-### 5. **Global Catalog**
-A distributed data store containing a subset of directory information from all domains, enabling cross-domain object searches.
-
-### 6. **Organizational Unit (OU)**
-A container object used to group and organize directory objects, providing a mechanism for delegation and policy application.
-
-### 7. **Trusts**
-Relationships between domains (in the same or different forests) that allow resource sharing and authentication.
+| **Component**                | **Description**                                                                 |
+|------------------------------|---------------------------------------------------------------------------------|
+| **Domain**                    | A logical group of objects (e.g., users, computers, printers) sharing a common directory database. |
+| **Domain Controller**         | A server that manages user authentication, authorization, and stores domain object information. |
+| **Active Directory Schema**   | Defines the structure and attributes of directory objects. It's replicated across domain controllers. |
+| **Forest**                    | A collection of one or more domains with a common schema, providing a security boundary and trust relationships between domains. |
+| **Global Catalog**            | A distributed data store containing a subset of directory information from all domains, enabling cross-domain object searches. |
+| **Organizational Unit (OU)**  | A container object used to group and organize directory objects, providing a mechanism for delegation and policy application. |
+| **Trusts**                    | Relationships between domains (in the same or different forests) that allow resource sharing and authentication. |
 
 ---
 
@@ -99,7 +90,11 @@ A **Trust** allows users from one domain to access resources in another domain w
 ![Shortcut Trust](https://github.com/user-attachments/assets/5f5b052b-9597-4a8d-ab5a-5950a7c6cc28)
 
 ### 6. **Parent-Child Trust**
-- Automatically created when a **child domain** is added to the **parent domain**. A transitive, two-way relationship.  
+- Automatically created when a **child domain** is added to the **parent domain**. A transitive, two-way relationship.
+- Shortcut Trust: Manually created, one-way, transitive trusts. They can only exist within a forest. They are created to optimize the authentication process by shortening the trust path. The trust path is the series of domain trust relationships that the authentication process must traverse between two domains in a forest that are not directly trusted by each other. Shortcut trusts shorten the trust path.
+
+Used to reduce access times in complex trust scenarios.
+Can be one-way or two-way transitive.
 ![Parent-Child Trust](https://github.com/user-attachments/assets/a470bf58-09b7-4ba0-800f-a0ddd658f382)
 
 ### 7. **Tree-Root Trust**
@@ -107,19 +102,23 @@ A **Trust** allows users from one domain to access resources in another domain w
 ![Tree-Root Trust](https://github.com/user-attachments/assets/5e3565ba-1555-4325-9598-8e9dfdb81775)
 
 ### 8. **External Trust**
-- A **one-way, non-transitive** trust used to link domains in **different forests**.  
+- A **one-way, non-transitive** trust used to link domains in **different forests**.
+- External Trust: A trust between domains in different forests. An external trust is a one-way, non-transitive trust that is manually created to establish a trust relationship between AD DS domains that are in different forests, or between an AD DS domain.
+External trusts allow you to provide users access to resources in a domain outside of the forest that is not already trusted by a forest trust. 
 ![External Trust](https://github.com/user-attachments/assets/406751e9-cd1f-4359-8d18-b2cfb6dd201c)
 
 ### 9. **Forest Trust**
-- A **transitive, one-way or two-way** trust between multiple forests. It allows access between different forests.  
+- A **transitive, one-way or two-way** trust between multiple forests. It allows access between different forests.
+- Manually created, one-way transitive, or two-way transitive trusts that allow you to provide access to resources between multiple forests. Forest trusts use both Kerberos v5 and NTLM authentication across forests where users can use their Universal Principal Name (UPN) or their Pre-Windows 2000 method (domain Name\username). Kerberos v5 is attempted first, and if that fails, it will then try NTLM.
 ![Forest Trust](https://github.com/user-attachments/assets/67f1741b-d9f9-46ca-b14a-3bf95311fd84)
 
 ### 10. **Realm Trust**
-- Connects Active Directory with **non-Windows systems** (e.g., Unix). **Transitive or non-transitive**.  
+- Connects Active Directory with **non-Windows systems** (e.g., Unix). **Transitive or non-transitive**.
+- Used to connect Active Directory with Kerberos V5 realm on a non-Windows system like Unix. In order to create a realm trust, the domain must be at the Windows Server 2003 functional level or higher. These can be transitive or non-transitive, one-way or two-way.
+  
 ![Realm Trust](https://github.com/user-attachments/assets/962a83fc-a698-4264-8070-23ef9add8398)
 
 ---
-
 **Conclusion**  
 Understanding the components of Active Directory and the different trust relationships helps administrators efficiently manage a network's security, access control, and resources. By leveraging tools like Group Policy and ACLs, AD ensures a centralized and secure environment for managing users, computers, and devices across the network.
 
