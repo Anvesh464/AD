@@ -110,10 +110,12 @@ Trust is a relationship that is established between two domains or forests to en
 
 ## Forest Trust
 - **Forest Trusts** are transitive, one-way, or two-way trusts created between multiple forests. They allow access to resources between forests using Kerberos v5 and NTLM authentication.
+- 
 ![image](https://github.com/user-attachments/assets/9d13d89d-b2a4-4fc3-908f-8c161af16c18)
 
 
 ## Realm Trust
 - **Realm Trust** connects Active Directory to a Kerberos V5 realm on non-Windows systems (e.g., Unix). It can be transitive or non-transitive, one-way or two-way.
+
 ![image](https://github.com/user-attachments/assets/bd612140-ffb1-4f86-9b86-40763b858b5e)
 
