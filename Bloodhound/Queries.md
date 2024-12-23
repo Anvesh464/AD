@@ -925,10 +925,10 @@ Adjust Query to Local Timezone (Change timezone parameter)
 MATCH (u:User) WHERE NOT u.lastlogon IN [-1.0, 0.0] return u.name, datetime({epochSeconds:toInteger(u.lastlogon), timezone: '+10:00'}) as LastLogon
 
 
-BH Observation Queries
-
+# BH Observation Queries
+```
 //1. Targetable users (have to remove the ladmin as they are using cyberark tool)
-
+```
 //1. Targetable users
 MATCH p=shortestPath((u:User)-[*1..]->
 (m:Group {name: "DOMAIN ADMINS@GUWW.NET"}))
