@@ -66,6 +66,7 @@ Destination : Microsoft LSA API (multiple)
 PS C:\AD\Tools\kekeo_old> klist
 PS C:\ad\tools\kekeo_old> ls \\mcorp-dc.moneycorp.local\c$
 ```
+![image](https://github.com/user-attachments/assets/ae250f47-f78f-4a7b-8b78-d38600527eeb)
 
 9. Gather the krbtgt hash, and request an inter-realm tgt once again:
 ```powershell
