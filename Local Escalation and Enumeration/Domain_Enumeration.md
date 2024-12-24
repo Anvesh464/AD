@@ -1,5 +1,107 @@
 # Domain Enumeration
 
+## Get Information about the Current Domain
+
+The following commands help retrieve information about the current domain:
+
+| **Task**                           | **Command**                                                                                  | **Description**                                                                                     |
+|------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Get Domain Information**         | `Get-NetDomain`                                                                                | Retrieves information about the current domain.                                                      |
+| **Import Active Directory Module** | `Import-Module .\Microsoft.ActiveDirectory.Management.dll`                                    | Imports the `Microsoft.ActiveDirectory.Management` module to interact with Active Directory.         |
+|                                    | `Import-Module .\ActiveDirectory\ActiveDirectory.psd1`                                       | Imports the `ActiveDirectory` module to use Active Directory cmdlets.                               |
+| **Get AD Domain Information**      | `Get-ADDomain`                                                                                 | Retrieves detailed information about the current Active Directory domain.                           |
+
+## Get Object Information about Another Domain
+
+To get information about another domain, use the following commands:
+
+| **Task**                            | **Command**                                                                                 | **Description**                                                                                      |
+|-------------------------------------|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| **Get Domain Information (External)**| `Get-NetDomain -Domain us.dollarcorp.moneycorp.local`                                        | Retrieves information for the `us.dollarcorp.moneycorp.local` domain.                               |
+|                                     | `Get-NetDomain -Domain moneycorp.local`                                                     | Retrieves information for the `moneycorp.local` domain.                                              |
+| **Get AD Domain Information (External)**| `Get-ADDomain -Identity moneycorp.local`                                                   | Retrieves detailed information about the `moneycorp.local` domain.                                  |
+
+## Domain Controllers
+
+### Get Domain Controllers for the Current Domain
+
+Use these commands to list domain controllers for the current domain:
+
+| **Task**                                  | **Command**                                                                                  | **Description**                                                                                     |
+|-------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Get Domain Controllers**                | `Get-NetDomainController`                                                                    | Lists domain controllers in the current domain.                                                      |
+|                                           | `Get-ADDomainController`                                                                     | Retrieves domain controller information from the Active Directory module.                           |
+
+### Get Trusted Forest Domain Controller
+
+To get information about a trusted forest domain controller:
+
+| **Task**                                    | **Command**                                                                                  | **Description**                                                                                     |
+|---------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Get Trusted Forest Domain Controller**    | `Get-NetDomainController -DomainController moneycorp.local`                                 | Retrieves information about a domain controller from the trusted forest `moneycorp.local`.           |
+
+### Get Domain Controllers for Another Domain
+
+To get domain controllers for a different domain, use the following:
+
+| **Task**                                      | **Command**                                                                                  | **Description**                                                                                     |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Get Domain Controllers for Another Domain** | `Get-NetDomainController -Domain moneycorp.local`                                            | Retrieves domain controllers for the `moneycorp.local` domain.                                       |
+
+---
+
+### Example Usage in PowerShell:
+
+#### 1. **Get Domain Information:**
+```powershell
+PS C:\AD\Tools> Get-NetDomain
+```
+
+#### 2. **Importing Active Directory Module:**
+```powershell
+PS C:\AD\Tools\ADModule-master\ADModule-master> Import-Module .\Microsoft.ActiveDirectory.Management.dll
+PS C:\AD\Tools\ADModule-master\ADModule-master> Import-Module .\ActiveDirectory\ActiveDirectory.psd1
+```
+
+#### 3. **Get Domain Information for Another Domain:**
+```powershell
+PS C:\AD\Tools> Get-NetDomain -Domain us.dollarcorp.moneycorp.local
+PS C:\AD\Tools> Get-NetDomain -Domain moneycorp.local
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADDomain -Identity moneycorp.local
+```
+
+#### 4. **Get Domain Controllers for the Current Domain:**
+```powershell
+PS C:\AD\Tools> Get-NetDomainController
+PS C:\AD\Tools\ADModule-master\ADModule-master\ActiveDirectory> Get-ADDomainController
+```
+
+#### 5. **Get Trusted Forest Domain Controller:**
+```powershell
+PS C:\AD\Tools> Get-NetDomainController -DomainController moneycorp.local
+```
+
+#### 6. **Get Domain Controllers for Another Domain:**
+```powershell
+PS C:\AD\Tools> Get-NetDomainController -Domain moneycorp.local
+```
+
+---
+
+### Notes:
+- The `Get-NetDomain` and `Get-NetDomainController` commands are useful for querying basic domain and domain controller information.
+- The `Get-ADDomain` and `Get-ADDomainController` commands from the Active Directory module provide more detailed and advanced information.
+- Importing the correct Active Directory modules is essential for ensuring that the cmdlets are available.
+
+---
+
+By organizing the information into sections with tables for clarity and a dedicated examples section, it becomes easy to read and follow when rendered in a GitHub Markdown file.
+```
+
+
+
+# Domain Enumeration
+
  Get Information about Current Domain
 ```powershell
 PS C:\AD\Tools> Get-NetDomain
