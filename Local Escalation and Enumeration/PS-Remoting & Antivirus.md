@@ -30,6 +30,106 @@
 
 ---
 
+# PowerShell Remoting (PS-Remoting)
+
+## Ports
+- Port number for WSMan or WinRM is 5981.
+- Port number for SSL is 5986.
+- PowerShell remoting port 5985 is the default for HTTP and HTTPS.
+
+## Types of PowerShell Remoting
+1. One to One
+2. One to Many
+
+# One to Many - New PSSession
+
+## Create a New PSSession and Enter It
+```powershell
+PS C:\AD\Tools> $sess = New-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+PS C:\AD\Tools> $sess
+
+ Id Name        ComputerName        ComputerType     State      ConfigurationName    Availability
+ -- ----        ------------        ------------     -----      -----------------    ------------
+  1 Session1    dcorp-adminsrv      RemoteMachine    Opened     Microsoft.PowerShell Available
+
+PS C:\AD\Tools> Enter-PSSession -Session $sess
+[dcorp-adminsrv.dollarcorp.moneycorp.local]: PS C:\Users\student157\Documents> $proc = Get-Process
+[dcorp-adminsrv.dollarcorp.moneycorp.local]: PS C:\Users\student157\Documents> exit
+PS C:\AD\Tools> Enter-PSSession -Session $sess
+[dcorp-adminsrv.dollarcorp.moneycorp.local]: PS C:\Users\student157\Documents> $proc
+```
+
+# One to One - Enter-PSSession
+- Interactive
+- Runs in a new process (`wsmprovhost`)
+- Is Stateful
+
+## Enter a PSSession
+```powershell
+PS C:\AD\Tools> Enter-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+[dcorp-adminsrv.dollarcorp.moneycorp.local]: PS C:\Users\student157\Documents> whoami /priv
+
+enter-pssession -computername ad -credential domain-lab\Administrator
+```
+
+# Script Execution
+
+## Invoke-Command | Function Load | File Load
+
+### Execute Scripts
+```powershell
+PS C:\AD\Tools> Invoke-Command -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local -ScriptBlock {whoami;hostname}
+PS C:\AD\Tools> Invoke-Command -ComputerName (Get-Content .\computers.txt) -ScriptBlock {whoami;hostname}
+```
+
+### Execute Functions
+```powershell
+PS C:\Users\student157\Desktop> hello
+PS C:\Users\student157\Desktop> Invoke-Command -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local -ScriptBlock ${function:hello}
+PS C:\Users\student157\Desktop> cat .\hello.ps1
+
+function hello {
+    Write-Host "Hello World! from function"
+}
+```
+
+### Execute File
+```powershell
+PS C:\Users\student157\Desktop> $sess = New-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+PS C:\Users\student157\Desktop> Invoke-Command -FilePath C:\Users\student157\Desktop\hello.ps1 -Session $sess
+PS C:\Users\student157\Desktop> Enter-PSSession -Session $sess
+[dcorp-adminsrv.dollarcorp.moneycorp.local]: PS C:\Users\student157\Documents> hello
+```
+
+# Language Mode
+
+## Constrained
+- Default cmdlets only work in PowerShell.
+- .NET classes and type accelerators are not available.
+- Configured in AppLocker.
+
+### Check Language Mode in Constrained Environment
+```powershell
+PS C:\AD\Tools> Invoke-Command -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local -ScriptBlock {$ExecutionContext.SessionState.LanguageMode}
+```
+
+## Full
+### Check Language Mode in Full Environment
+```powershell
+PS C:\Users\Lenovo> $ExecutionContext.SessionState.LanguageMode
+```
+
+## Passing Arguments in Invoke-Command
+Only positional arguments could be passed this way.
+```powershell
+Invoke-Command -ScriptBlock ${function:GetPassHashes} -ComputerName (Get-Content <list_of_servers>) -ArgumentList
+```
+
+This format should make the commands more organized and easier to read and paste into GitHub!
+```
+
+
+
 ## AppLocker Enumeration
 
 ### With the GPO
