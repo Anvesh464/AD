@@ -137,3 +137,37 @@ BloodHound is an open-source, JavaScript-based single-page application that prov
 5. **Visuals**: Understanding the icons used in the BloodHound GUI, such as **blue dots** for users and **yellow dots** for machines and groups.
 
 This markdown content is ready to be used in a GitHub README or similar documentation for sharing knowledge about **BloodHound** and how to use it effectively.
+
+**• Setup BloodHound and identify a machine where studentx has local administrative access.** 
+```
+Start an application: 
+Install(not for local installtion) and start the neo4j service as follows:
+PS C:\AD\Tools\neo4j-community-3.5.1-windows\neo4j-community-3.5.1\bin> .\neo4j.bat install-service
+Neo4j service installed
+PS C:\AD\Tools\neo4j-community-3.5.1-windows\neo4j-community-3.5.1\bin> .\neo4j.bat start
+Once the service gets started browse to http://localhost:7474
+Enter the username: neo4j and password: neo4j. You need to enter a new password. Let's use BloodHound as the new password.
+Now, open BloodHound from C:\AD\Tools\BloodHound-win32-x64\BloodHound-win32-x64\BloodHound.exe and provide the following details:
+bolt://localhost:7687
+Username: neo4j
+Password: BloodHound
+```
+Run the following PowerShell commands to tun BloodHound ingestores to gather data and information about the current domain
+```
+PS C:\AD\Tools\BloodHound-master\BloodHound-master\Ingestors> . .\SharpHound.ps1  --> load powershell script after run function
+PS C:\AD\Tools\BloodHound-master\BloodHound-master\Ingestors> Invoke-BloodHound -CollectionMethod All -Verbose
+Initializing BloodHound at 9:23 AM on 7/1/2020
+Waiting for writer thread to finish
+Compressing data to C:\AD\Tools\BloodHound-master\BloodHound-master\Ingestors\20200701092346_BloodHound.zip.  --> file created 
+```
+You can upload this file directly to the UI.
+some time BloodHound miss session. so check for session are there or not
+```
+PS C:\AD\Tools\BloodHound-master\BloodHound-master\Ingestors> Invoke-BloodHound -CollectionMethod Loggedon -Verbose  --> for session
+Invoke-BloodHound -CollectionMethod All -ExcludeDC
+```
+```
+Invoke-BloodHound -CollectionMethod -Session
+Initializing BloodHound at 10:38 AM on 8/3/2020
+Resolved Collection Methods to Group, LocalAdmin, Session, Trusts, ACL, Container, RDP, ObjectProps, DCOM
+```
