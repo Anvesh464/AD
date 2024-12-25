@@ -1,9 +1,3 @@
-To format the given content in a clean and readable manner for a GitHub repository, it's best to use proper Markdown syntax. This will enhance readability and make it easier for others to follow along. Here's how you can structure your content:
-
-<img src="../Kerberos_files/image001.png" width="700" height="500">
-
-
-```markdown
 # PowerShell Scripts and Enumeration Techniques
 
 This repository contains various PowerShell commands and scripts used for domain enumeration, local admin access, AMSI bypass, and other security-related tasks. Below are examples and explanations of various techniques that may be useful for penetration testing, system administration, and security auditing.
