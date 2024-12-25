@@ -1,5 +1,8 @@
 To format the given content in a clean and readable manner for a GitHub repository, it's best to use proper Markdown syntax. This will enhance readability and make it easier for others to follow along. Here's how you can structure your content:
 
+<img src="/Kerberos_files/image050.png" width="700" height="500">
+
+
 ```markdown
 # PowerShell Scripts and Enumeration Techniques
 
