@@ -55,4 +55,3 @@ Get-DomainUser –Properties description
 # Download PowerView
 You can download the PowerView script from the following link:
 [PowerView Script - GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
-```
