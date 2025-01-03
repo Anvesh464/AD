@@ -1536,9 +1536,7 @@ RETURN u.name, u.allowedtodelegate
 ```
 This query identifies users who have permissions to delegate actions to other users or computers, potentially useful in the context of Kerberos authentication.
 
-# *BH Observation Queries&*
-```
-It seems like you are working with a complex Cypher query setup for extracting detailed user, group, and computer privilege relationships from a Neo4j database. Here’s a brief breakdown of what the provided Cypher queries do:
+# *BH Observation Queries*
 
 ### 1. **Targetable Users**
    - Identifies users with paths to the `DOMAIN ADMINS` group, showing their name, status, display name, email, and designation.
