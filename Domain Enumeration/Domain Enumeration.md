@@ -1,11 +1,20 @@
 # Domain Group and User Enumeration
 
-### Get all the groups in the current domain
+## Get all the groups in the current domain
 ```powershell
-Get-DomainGroup
+Get-DomainGroup or Get-NetDomain
+Get-NetDomain -Domain moneycorp.local   --> Bi-directional trust of any other domain
+```
+## Domain Controller
+```powershell
+Get domain controllers for the current domain
+PS C:\AD\Tools> Get-NetDomainController   --> AD of current Domain
+PS C:\AD\Tools> Get-NetDomainController -DomainController  moneycorp.local  -- trusted Forest Domain Controller
+Get domain controllers for another domain
+PS C:\AD\Tools> Get-NetDomainController -Domain moneycorp.local
 ```
 
-### Get the members of a specific group (e.g., Domain Admins)
+## Get the members of a specific group (e.g., Domain Admins)
 ```powershell
 Get-DomainGroupMember -Name "Domain Admins"
 ```
