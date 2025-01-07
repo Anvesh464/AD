@@ -10,6 +10,9 @@ Get-DomainComputer -FindOne | Find-DomainObjectPropertyOutlier
 ### Get all domain computers
 ```powershell
 Get-DomainComputer
+PS C:\AD\Tools> Get-NetComputer  -->gives list of all computers in current domain
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADComputer  -->current domain computers list
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADComputer -Filter * -Properties *  --
 ```
 
 ### Get domain computers running Server 2016
