@@ -78,3 +78,19 @@ Get-DomainUser –Properties description
 # Download PowerView
 You can download the PowerView script from the following link:
 [PowerView Script - GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
+
+# Logged on Users on machine (Admin Priv) Sessions
+### Get a list of actively logged on users in a computer | Get users that are logged on to a given computer:
+```powershell
+PS C:\AD\Tools> Get-NetLoggedon  --> local machine
+PS C:\AD\Tools> Get-NetLoggedon -ComputerName dcorp-dc.dollarcorp.moneycorp.local  -->  given host for actively logged on users.
+First find local admin access after use computer name who loggged on system so we can dump hashes for that machine.
+```
+### Get locally logged users on a computer (needs remote registry on the target started by default on server OS)	
+```powershell
+PS C:\AD\Tools>  Get-LoggedonLocal -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+```
+### Get the last logged user on a computer (needs administrative rights and remote registry on the target)	
+```powershell
+PS C:\AD\Tools> Get-LastLoggedOn -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+```
