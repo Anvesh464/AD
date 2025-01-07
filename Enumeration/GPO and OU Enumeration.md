@@ -10,6 +10,7 @@
 PS C:\AD\Tools> get-netgpo --> get a list of all group policy in the domain.
 PS C:\AD\Tools> Get-NetGPO | select displayname,adspath  displayname adspath ----------- ------- Default Domain Policy  
 PS C:\AD\Tools> Get-NetGPO | select displayname  displayname ----------- Default Domain Policy Default Domain Controllers Policy Applocker Servers Students
+Get-DomainGPO | Select displayname
 ```
 
 Group policy applied on Particular Computer
@@ -43,51 +44,24 @@ Get machines where the given user is member of a specific group
 PS C:\AD\Tools> Find-GPOLocation -UserName student157 Verbose
 ```
 
-
-
-
-
-
-
-
-### Get a list of Domain GPOs and their display names
-```powershell
-Get-DomainGPO | Select displayname
-```
-
-### Get a specific GPO applied to a computer
-```powershell
-Get-DomainGPO -ComputerName student.pentesting.local
-```
-
-### Get machines where a given user is a member of a specific group
-```powershell
-Get-DomainGPOUserLocalGroupMapping -UserName student1 -Verbose
-```
-
-### Get the domain information
-```powershell
-Get-domain
-```
-
-### Enumerate all global catalogs in the forest
-```powershell
-Get-ForestGlobalCatalog
-```
-
-### Get Organizational Units (OUs) in a domain
-```powershell
-Get-DomainOU
-```
-
-### Get the GPOs applied to a specific OU. GPO names are stored in the `gplink` attribute from the Get-NetOU command.
-```powershell
-Get-DomainGPO
-```
-
 ### Get a specific GPO by its GUID
 ```powershell
 Get-DomainGPO -Name "{AB306569-220D-43FF-B03B83E8F4EF8081}"
+```
+# OU
+OU
+```powershell
+PS C:\AD\Tools> Get-NetOU
+PS C:\AD\Tools> Get-NetOU -FullData | select name   
+PS C:\AD\Tools\ADModule-master\ADModule-master\ActiveDirectory> Get-ADOrganizationalUnit -Filter *
+```
+Get GPO applied on an particular OU. Read GPOname from gplink attribute from Get-NetOU (Group policy applied studentmachine ou)
+```powershell
+PS C:\AD\Tools> Get-NetGPO -GPOname '{3E04167E-C2B6-4A9A-8FB7-C811158DC97C}'
+```
+– List all the computers in the StudentMachines OU.
+```powershell
+PS C:\AD\Tools> Get-NetOU -OUName StudentMachines LDAP://OU=StudentMachines,DC=dollarcorp,DC=moneycorp,DC=local  PS C:\AD\Tools> Get-NetOU -OUName StudentMachines | %{Get-NetComputer -ADSPath $_}
 ```
 
 ## Group Policy Overview
