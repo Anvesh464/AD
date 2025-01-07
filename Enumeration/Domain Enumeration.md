@@ -43,17 +43,20 @@ PS C:\AD\Tools> Get-DomainPolicy -Domain moneycorp.local   --> Trusted Domain Po
 PS C:\AD\Tools> (Get-DomainPolicy -Domain moneycorp.local)."system access"
 ```
 
-## Get all the groups in the current domain
-```powershell
-Get-DomainGroup or Get-NetDomain
-Get-NetDomain -Domain moneycorp.local   --> Bi-directional trust of any other domain
-```
 ## Domain SID
+Get domain SID for the current domain and another domain
 Get domain SID for the current domain
 ```powershell
 PS C:\AD\Tools> Get-DomainSID   --> Current Domain SID 
 PS C:\AD\Tools> Get-DomainSID -Domain moneycorp.local  --> Trusted Domain SID
 PS C:\AD\Tools\kekeo_old> Get-NetGroup 'enterprise admins' -Domain moneycorp.local -FullData
+```
+
+
+## Get all the groups in the current domain
+```powershell
+Get-DomainGroup or Get-NetDomain
+Get-NetDomain -Domain moneycorp.local   --> Bi-directional trust of any other domain
 ```
 
 ## Get the members of a specific group (e.g., Domain Admins)
